@@ -1,8 +1,5 @@
-addpath('~/My_Project/SBT/matlab/');
-addpath('~/My_Project/bacteria/matlab/');
-
-
-if ~exist('datfolder', 'var'), datfolder='~/My_Project/SBT/'; end;
+if ~exist('datfolder', 'var'), datfolder='./'; end;
+if ~exist('folder', 'var'), folder='./'; end;
 
 load([datfolder, 'resstwallvh.mat']); %BEM result of the resistance matrix
 
@@ -17,11 +14,8 @@ fVxyLU = @(h) 2*(-.1*log(h)-.19);
 fVxyFO = @(h) 1.5*(-2/15*log(h)-.25);
 
 
-%coefrsst=[4.9, 0.08, 0.0, 0.11, 0.0, .00, .5]; %% L=.5; lambda=.1;
-%coefrsst=[1.0, .34, 0.0, 0.37, 0.007, 0.007, 1.0]; 
-%coefrsst=[1.2, .37, 0.0, 0.48, 0.011, .31, 3.0];
-coefrsst=[1.1, .62, 0.0, 0.84, 0.0224, 3.0, 6.0];
-folder='~/My_Project/SBT/';
+coefrsst=[1.1, .62, 0.0, 0.84, 0.0224, 3.0, 6.0]; %% resistance matrix elements for the flagellum of C. crescentus 
+
 rectROI=[0   60   1160   600];
 vorient0=[1,0,0];
 vcell0=[-1,0,0];
