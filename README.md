@@ -4,4 +4,4 @@ Hydrodynamic simulation of a self-propelled sphere (by a helical flagellum) near
 
 To generate the 3D velocity and angular velocity in a body-fixed frame of reference (with flagellum aligned in x), use: [vV, vOmega]=propAnisoCell(-pi, mrstc, a, pangle); where "mrstc" is a resistence matrix of the sphere, "a" is the radius of the sphere, "pangle" is the deviation of the flagellar axis from the radial direction. 
 
-To generate a movie for the simulation, use the script: mov_trace_rosette.
+To generate a movie for the simulation, use the script: mov_trace_rosette. Vary the alignment of flagellum by editing "pangle", a diviviation angle from the radial direction, which is currently set as "pangle=pi/3." 
