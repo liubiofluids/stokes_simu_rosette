@@ -160,9 +160,7 @@ set(p,'FaceColor', 'Interp', 'CData', c,...
 'EdgeColor', 'black');
 if exist('pfrc', 'var'), delete(pfrc); end;
 crdfrc=(rot*arrowStlet')'+repmat(v1(i,:), 2, 1);
-[fa, va, pfrc]=surfArrow2(crdfrc(2,:), crdfrc(1,:), sizearrow(1), sizearrow(2), sizearrow(3));
-set(pfrc,'FaceColor', .5*[0,0,1]+.5, ...
-'EdgeColor', 'none');
+
 delete(findall(gcf, 'Type', 'Light'));
 if v1(i,3)+2*a>a+5
 axis([v1(i,1)-10, v1(i,1)+10, v1(i,2)-10, v1(i,2)+10, -a, v1(i,3)+2*a]);
@@ -199,9 +197,7 @@ set(pf2,'FaceColor', 'Interp', 'CData', c,...
 'EdgeColor', 'black');
 if exist('pfrc2', 'var'), delete(pfrc2); end;
 crdfrc=(rot*arrowStlet')'+repmat(v1(i,:)-vcell*a, 2, 1);
-pfrc2=patch('faces', fa, 'vertices', va);
-set(pfrc2,'FaceColor', .5*[0,0,1]+.5, ...
-'EdgeColor', 'none');
+
 while max(v1(icutoff:i,1))-min(v1(icutoff:i,1))>5*a || max(v1(icutoff:i,2))-min(v1(icutoff:i,2))>5*a
 	icutoff=icutoff+1;
 end
